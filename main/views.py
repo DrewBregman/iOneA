@@ -45,3 +45,10 @@ def create(response):
     else:
         form = CreateNewList()
     return render(response, "main/create.html", {"form": form})
+
+def search(request):
+    return HttpResponse('search')
+
+def myprofile(request):
+    return HttpResponse('myprofile')
+
