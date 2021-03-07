@@ -62,7 +62,7 @@ class uBio(models.Model):
     aInterest = models.TextField()
     aExpertise = models.TextField()
     rGoal = models.TextField()
-    bPic = models.ImageField(height_field='396', width_field='1584')
+    bPic = models.ImageField(height_field='396', width_field='384')
     uPic = models.ImageField(height_field='320', width_field='320')
     curLooking = models.TextField()
     twitter = models.CharField(max_length = 30, null=False, blank=False)
@@ -80,20 +80,6 @@ class uProjects(models.Model):
 
  #andrew_user = userID(username="andrewbregman", firstName="Andrew", lastName="bregman", email="andrew.bregman@westpoint.edu", phone=8563832480, gradYear="2023-5-23", company="D2")
 
-class Projects(models.Model):
-    numUsers = models.IntegerField(blank = False, null = False)
-    CIC_OIC = models.CharField(max_length=100)
-    Purpose = models.TextField()
-    ifRecruting = models.BooleanField()
-    name = models.CharField(max_length=100)
-    #bPic = models.ImageField(height_field='396', width_field='1584')
-    #pPic = models.ImageField(height_field='320', width_field='320')
-    currentlyWorkingOn = models.TextField()
-
-class Tags(models.Model):
-    name = models.CharField(max_length=30)
-    def __str__(self):
-        return self.name
 
 class Department(models.Model):
     name = models.CharField(max_length=30)
