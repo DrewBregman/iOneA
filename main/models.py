@@ -4,6 +4,7 @@ from partial_date import PartialDate
 from django import forms
 from phone_field import PhoneField
 from projects.models import Project
+from django.contrib.auth.models import User
 
 # Create your models here.
 class ToDoList(models.Model):
@@ -22,11 +23,11 @@ class Item(models.Model):
         return self.text
 
 
-class User(models.Model):
-    name = models.CharField(max_length=50)
+#class User(models.Model):
+ #   name = models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.name
+  #  def __str__(self):
+   #     return self.name
 
 
 class userID(models.Model):
@@ -81,6 +82,7 @@ class uBio(models.Model):
 class uProjects(models.Model):
     user = models.ForeignKey(userID, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    ifAccepted = models.BooleanField(null = False, blank=False)
     ifLeader = models.BooleanField(null = False, blank=False)
     ifAdmin = models.BooleanField(null = False, blank=False)
     title = models.CharField(max_length=100)

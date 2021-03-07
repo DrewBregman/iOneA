@@ -7,17 +7,17 @@ class Project(models.Model):
     numUser=models.IntegerField()
     purpose=models.TextField()
     tag_choice = (
-        ('d' , ('Data Analysis')),
-        ('p' , ('3D Printing')),
-        ('r' , ('Robotics')),
-        ('c' , ('Coding')),
-        ('f' , ('Frauds, AKA Law majors')),
+        ('Data Analysis' , ('Data Analysis')),
+        ('3D Printing' , ('3D Printing')),
+        ('Robotics' , ('Robotics')),
+        ('Coding' , ('Coding')),
+        ('Frauds' , ('Frauds, AKA Law majors')),
     )
 
     projectTag = models.CharField(
         max_length=32,
         choices=tag_choice,
-        default='f',
+        default='Frauds',
     )
 
     class Meta:
