@@ -36,7 +36,7 @@ class userID(models.Model):
 
     # firstName = models.CharField(max_length = 25, null=False, blank=False)
     # lastName =  models.CharField(max_length = 25, null=False, blank=False)
-    # email =  models.EmailField()
+    email =  models.EmailField()
     # pas = models.CharField(max_length=50, null=False, blank=False)
     # class UserForm(forms.ModelForm):
     # password = forms.CharField(widget=forms.PasswordInput)

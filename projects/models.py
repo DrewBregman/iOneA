@@ -5,6 +5,9 @@ class Project(models.Model):
     name = models.CharField(max_length=30)
     department=models.CharField(max_length=30)
     numUser=models.IntegerField()
+    bPic = models.ImageField(
+        upload_to ='uploads', blank=False, default=True)
+
     purpose=models.TextField()
     tag_choice = (
         ('Data Analysis' , ('Data Analysis')),
