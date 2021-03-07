@@ -54,11 +54,11 @@ class userID(models.Model):
 
 class uBio(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    meetMe = models.CharField(max_length=150, null=False, blank=False)
-    department = models.CharField(max_length = 100, null=False, blank=False)
-    title = models.CharField(max_length = 30, null=False, blank=False) 
-    major = models.CharField(max_length = 50, null=False, blank=False)
-    minor = models.CharField(max_length = 50, null=False, blank=False)
+    MeetMe = models.CharField(max_length=150, null=False, blank=False)
+    Department = models.CharField(max_length = 100, null=False, blank=False)
+    Title = models.CharField(max_length = 30, null=False, blank=False) 
+    Major = models.CharField(max_length = 50, null=False, blank=False)
+    Minor = models.CharField(max_length = 50, null=False, blank=False)
     aInterest = models.TextField()
     aExpertise = models.TextField()
     rGoal = models.TextField()
@@ -72,26 +72,7 @@ class uBio(models.Model):
     tictok = models.CharField(max_length = 30, null=False, blank=False)
 
     def __str__(self):
-        return self.meetMe
-    def __str__(self):
-        return self.department
-    def __str__(self):
-        return self.title
-    def __str__(self):
-        return self.major
-    def __str__(self):
-        return self.minor
-    def __str__(self):
-        return self.twitter
-    def __str__(self):
-        return self.insta
-    def __str__(self):
-        return self.facebook
-    def __str__(self):
-        return self.linkedin
-    def __str__(self):
-        return self.tictok
-        
+        return self.user
 
 class uProjects(models.Model):
     user = models.ForeignKey(userID, on_delete=models.CASCADE)
