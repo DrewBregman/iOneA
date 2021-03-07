@@ -3,7 +3,7 @@ import datetime
 from partial_date import PartialDate
 from django import forms
 from phone_field import PhoneField
-
+from projects.models import Project
 
 # Create your models here.
 class ToDoList(models.Model):
@@ -65,8 +65,8 @@ class uBio(models.Model):
     aInterest = models.TextField()
     aExpertise = models.TextField()
     rGoal = models.TextField()
-    bPic = models.ImageField(height_field='396', width_field='384')
-    uPic = models.ImageField(height_field='320', width_field='320')
+    #bPic = models.ImageField()#height_field='396', width_field='384')
+    #uPic = models.ImageField()#height_field='320', width_field='320')
     curLooking = models.TextField()
     twitter = models.CharField(max_length=30, null=False, blank=False)
     insta = models.CharField(max_length=30, null=False, blank=False)
@@ -80,7 +80,13 @@ class uBio(models.Model):
 
 class uProjects(models.Model):
     user = models.ForeignKey(userID, on_delete=models.CASCADE)
-    # waiting on relational tables to import data from there
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    ifLeader = models.BooleanField(null = False, blank=False)
+    ifAdmin = models.BooleanField(null = False, blank=False)
+    title = models.CharField(max_length=100)
+    def __str__(self):
+        return self.user.name + ',' + self.project.name
+
 
 
 # andrew_user = userID(username="andrewbregman", firstName="Andrew", lastName="bregman", email="andrew.bregman@westpoint.edu", phone=8563832480, gradYear="2023-5-23", company="D2")
@@ -91,3 +97,15 @@ class Department(models.Model):
 
     def __str__(self):
         return self.name
+
+class uDeparment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.user.name + ',' + self.department.name
+
+class projDepartment(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.project.name + ',' + self.department.name
