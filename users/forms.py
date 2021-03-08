@@ -16,4 +16,4 @@ class infoForm(forms.Form):
 
     class Meta:
         model = Profile
-        fields = ["firstName","lastName","username","username","image","email","Department",]
+        fields = ["firstName","lastName","image","email","Department"]
