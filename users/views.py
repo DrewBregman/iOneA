@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from .forms import RegisterForm
+from .forms import RegisterForm, infoForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -18,14 +18,20 @@ def register(response):
     return render(response, "users/register.html", {'form':form})
 
 def home(request):
-    #ls = request.user.objects.get(id=request.user.id)
-    #first = False
-    first = request.user.profile.first
-    if first == True:
-        request.user.profile.first = False
-        request.user.profile.save()
-        return render(request, "users/info.html", {'form':RegisterForm()})
-    return redirect('/')
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Account updated!!!')
+            request.user.profile.first = False
+            return redirect('/Create')
+    else:
+        form = infoForm()
+        first = request.user.profile.first
+        if first == True:
+            request.user.profile.save()
+            return render(request, "users/info.html", {'form':form})
+        return redirect('/')
 
 @login_required
 def profile(request):

@@ -5,7 +5,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstName = models.CharField(max_length = 25, null=False, blank=False, default="Enter your first name")
     lastName =  models.CharField(max_length = 25, null=False, blank=False, default="Enter your last name")
-    username = models.CharField(max_length=25, null=False, blank=False, unique=True, default=User.username)
+    #username = models.CharField(max_length=25, null=False, blank=False, unique=True, default=User.username)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     email =  models.EmailField(default="")
     first = models.BooleanField(default = True)
