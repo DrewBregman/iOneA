@@ -69,6 +69,11 @@ class Profile(models.Model):
     #linkedin = models.CharField(max_length=30, null=False, blank=False)
     #tictok = models.CharField(max_length=30, null=False, blank=False)
 
+
+    gradYear = models.IntegerField(blank=True, default=2023)
+    company = models.CharField(max_length=2, blank=True, default="")
+    phone = models.IntegerField(null=False, blank=False, default=+11111111111)
+
     def __str__(self):
         return f'{self.user.username} Profile'
         
