@@ -10,11 +10,21 @@ def register(response):
         form = RegisterForm(response.POST)
         if form.is_valid():
             form.save()
-            messages.success(response), f'Your account has been created! You are now able to log in'
-        return redirect('/login')
+            messages.success(response, f'Your account has been created! You are now able to log in')
+            return redirect('/login')
     else:
         form = RegisterForm()
     return render(response, "users/register.html", {'form':form})
+
+def home(request):
+    #ls = request.user.objects.get(id=request.user.id)
+    #first = False
+    first = request.user.profile.first
+    if first == True:
+        request.user.profile.first = False
+        request.user.profile.save()
+        return render(request, "users/info.html", {'form':RegisterForm()})
+    return redirect('/')
 
 @login_required
 def profile(request):

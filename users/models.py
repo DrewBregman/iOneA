@@ -8,6 +8,7 @@ class Profile(models.Model):
     username = models.CharField(max_length=25, null=False, blank=False, unique=True)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     email =  models.EmailField(default="")
+    first = models.BooleanField(default = True)
     #MeetMe = models.TextField()
     
     dep_choice = (
