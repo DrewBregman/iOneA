@@ -30,13 +30,12 @@ class Item(models.Model):
    #     return self.name
 
 
-class userID(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    username = models.CharField(max_length=25, null=False, blank=False, unique=True)
+#class userID(models.Model):
+    #user = models.ForeignKey(User, on_delete=models.CASCADE)
+   # username = models.CharField(max_length=25, null=False, blank=False, unique=True)
 
-    # firstName = models.CharField(max_length = 25, null=False, blank=False)
-    # lastName =  models.CharField(max_length = 25, null=False, blank=False)
-    email =  models.EmailField()
+  
+    #email =  models.EmailField()
     # pas = models.CharField(max_length=50, null=False, blank=False)
     # class UserForm(forms.ModelForm):
     # password = forms.CharField(widget=forms.PasswordInput)
@@ -48,39 +47,18 @@ class userID(models.Model):
     # gradYear = models.IntegerField()
     # company = models.CharField(max_length = 2)
 
-    def __str__(self):
-        return self.username
+    #def __str__(self):
+        #return self.username
     # def __str__(self):
     #   return self.firstName
     # def __str__(self):
     #   return self.lastName
 
 
-class uBio(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    MeetMe = models.CharField(max_length=150, null=False, blank=False)
-    Department = models.CharField(max_length=100, null=False, blank=False)
-    Title = models.CharField(max_length=30, null=False, blank=False)
-    Major = models.CharField(max_length=50, null=False, blank=False)
-    Minor = models.CharField(max_length=50, null=False, blank=False)
-    aInterest = models.TextField()
-    aExpertise = models.TextField()
-    rGoal = models.TextField()
-    #bPic = models.ImageField()#height_field='396', width_field='384')
-    #uPic = models.ImageField()#height_field='320', width_field='320')
-    curLooking = models.TextField()
-    twitter = models.CharField(max_length=30, null=False, blank=False)
-    insta = models.CharField(max_length=30, null=False, blank=False)
-    facebook = models.CharField(max_length=30, null=False, blank=False)
-    linkedin = models.CharField(max_length=30, null=False, blank=False)
-    tictok = models.CharField(max_length=30, null=False, blank=False)
-
-    def __str__(self):
-        return self.user
-
+    
 
 class uProjects(models.Model):
-    user = models.ForeignKey(userID, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     ifAccepted = models.BooleanField(null = False, blank=False)
     ifLeader = models.BooleanField(null = False, blank=False)
