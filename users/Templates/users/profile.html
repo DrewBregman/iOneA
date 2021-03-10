@@ -14,7 +14,6 @@
                 {% else %}
                 <i><p style="color:black;font-size:12px;">Cadet at West Point looking for {{user.profile.lookingFor}}</p></i>
                 {% endif %}
-                <p class="text-secondary">Email: {{user.profile.email}}</p>
                 <p class="text-secondary">Graduation Year: {{user.profile.gradYear}}</p>
                 <p class="text-secondary">Company: {{user.profile.company}}</p>
                 <p class="text-secondary">Department of {{user.profile.Department}}</p>
@@ -25,9 +24,20 @@
                 <p class="text-secondary">{{user.profile.firstName}}'s research goals are {{user.profile.research_goals}}</p>
                 <a href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow {{user.profile.twitter}}</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-            </div>
+            </div>   
         </div>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                {{ u_form|crispy }}
+                {{ p_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Update</button>
+            </div>
+
+        </form>
     </div>
 </body>
 {% endblock content %}

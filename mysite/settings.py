@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'projects',
     'users.apps.UsersConfig',
     #'phonenumber_field',
+    'django_cleanup',
 
 ]
 
