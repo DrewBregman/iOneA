@@ -1,0 +1,75 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<html>
+<body>
+    <div class="content-section">
+        <div class="media">
+            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="Avatar" style="width:90px; float: left; position:absolute; top: 75px; left: 225px;">
+            <div class="media-body">
+                <br></br>
+                <h2 class="account-heading">{{user.profile.username}}</h2>
+                {% if title == 'Faculty' %}
+                <i><p style="color:white;font-size:12px;">Faculty at West Point</p></i>
+                {% else %}
+                <i><p style="color:white;font-size:12px;">Cadet at West Point looking for {{user.profile.lookingFor}}</p></i>
+                {% endif %}
+                <p class="text-secondary">Graduation Year: {{projects.profile.gradYear}}</p>
+                <p class="text-secondary">Company: {{user.profile.company}}</p>
+                <p class="text-secondary">Department of {{user.profile.Department}}</p>
+                <p class="text-secondary">Major: {{user.profile.Major}}</p>
+                <p class="text-secondary">Minor: {{user.profile.Minor}}</p>
+                <p class="text-secondary">{{user.profile.firstName}}'s Interests are {{user.profile.interest}}</p>
+                <p class="text-secondary">{{user.profile.firstName}} has expertise in {{user.profile.expertise}}</p>
+                <p class="text-secondary">{{user.profile.firstName}}'s research goals are {{user.profile.research_goals}}</p>
+            
+                
+
+                <button id="myButton" class="btn info">Update Profile</button>
+                <script type="text/javascript">
+                    document.getElementById("myButton").onclick = function () {
+                        location.href = "{% url 'updateprofile' %}";
+                    };
+                </script>
+            
+                <style type="text/css">
+                    .btn {
+                        border: 2px solid black;
+                        background-color: white;
+                        color: black;
+                        padding: 12px 24px;
+                        font-size: 14px;
+                        cursor: pointer;
+                        border-radius:5px;
+                    }
+
+                    .info {
+                        border-color: #2196F3;
+                        color: dodgerblue
+                    }
+
+                    .info:hover {
+                        background: #2196F3;
+                        color: white;
+                    }
+
+                    .text-secondary {
+                        color: white;
+                        font-size: 16px;
+
+                    }
+                </style>
+                   
+                
+                <div style="position:absolute; top: 75px; right:75px;">
+                        <a href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow {{user.profile.twitter}}</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div> 
+                    
+
+                                            
+        </div>
+    </div>
+</body>
+{% endblock content %}
+</html>
