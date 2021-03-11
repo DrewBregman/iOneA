@@ -6,7 +6,7 @@ class Project(models.Model):
     department=models.CharField(max_length=30)
     numUser=models.IntegerField()
     bPic = models.ImageField(
-        upload_to ='uploads', blank=False, default=True)
+        upload_to ='uploads', blank=False)
 
     purpose=models.TextField()
     tag_choice = (
