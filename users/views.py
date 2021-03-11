@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
+from .models import Profile
 
 # Create your views here.
 def register(request):
@@ -21,19 +22,43 @@ def register(request):
 
 def home(request):
     if request.method == "POST":
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Account updated!!!')
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST,
+                                    request.FILES,
+                                    instance=request.user.profile)
+
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f'Your account has been updated!')
             request.user.profile.first = False
-            return redirect('/Create')
+            request.user.profile.save()
+            return redirect('profile')
+        else:
+            u_form = UserUpdateForm(instance=request.user)
+            p_form = ProfileUpdateForm(instance=request.user.profile)
+            context = {
+                'u_form': u_form,
+                'p_form': p_form
+            }
+            first = request.user.profile.first
+            if first == True:
+                request.user.profile.save()
+                return render(request, 'users/updateprofile.html', context)
+
     else:
-        form = infoForm()
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+        context = {
+            'u_form': u_form,
+            'p_form': p_form
+        }
         first = request.user.profile.first
         if first == True:
             request.user.profile.save()
-            return render(request, "users/info.html", {'form':form})
-        return redirect('/') 
+            return render(request, 'users/updateprofile.html', context)
+    return redirect('/')
+
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
