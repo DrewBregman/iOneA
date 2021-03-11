@@ -1,6 +1,18 @@
+{% extends "main/base.html" %}
+<html>
+{% block content %}
 
-<h1>Search</h1>
+<body>
+    <div style ="text-align:center; vertical-align:center; display:table-cell;">
+        <h1>Search</h1>
 
-<form action="{% url 'search_results' %}" method="get">
-    <input name="q" type="text" placeholders="Search...">
-</form>
+        <form action="{% url 'search_results' %}" method="get">
+            <input name="q" type="text" placeholders="Search...">
+        </form>
+    </div>
+</body>
+{%endblock%}
+
+
+</html>
+
