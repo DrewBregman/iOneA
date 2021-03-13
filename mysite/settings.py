@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     #'phonenumber_field',
     'django_cleanup',
-
+    'Notifications',
 ]
 
 MIDDLEWARE = [

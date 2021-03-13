@@ -19,6 +19,7 @@ from users import views as v
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from Notifications import views as n
 from django.conf.urls import url
 
 urlpatterns = [
@@ -26,6 +27,7 @@ urlpatterns = [
     path('register/',v.register, name='register'),
     path('profile/',v.profile, name='profile'),
     path('home/',v.home, name='home'),
+    path('noti/',n.SearchResultsView.as_view(), name='noti'),
     path('', include('main.urls')),
     path('', include("django.contrib.auth.urls")),
     path('project/', include('projects.urls')),

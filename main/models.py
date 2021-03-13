@@ -65,7 +65,7 @@ class uProjects(models.Model):
     ifAdmin = models.BooleanField(null = False, blank=False)
     title = models.CharField(max_length=100)
     def __str__(self):
-        return self.user.name + ',' + self.project.name
+        return self.user.username + ',' + self.project.name
 
 
 
@@ -82,7 +82,7 @@ class uDeparment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     def __str__(self):
-        return self.user.name + ',' + self.department.name
+        return self.user.username + ',' + self.department.name
 
 class projDepartment(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
