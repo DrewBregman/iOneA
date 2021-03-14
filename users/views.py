@@ -14,8 +14,9 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            #messages.success(request), f'Your account has been created! You are now able to log in'
         return redirect('login')
+        #messages.success(request, 'Your account has been created! You are now able to log in')
+        #return HttpResponse("regii")
     else:
         form = RegisterForm()
     return render(request, "users/register.html", {'form':form})
@@ -30,7 +31,7 @@ def home(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-            messages.success(request, f'Your account has been updated!')
+            messages.success(request, 'Your account has been updated!')
             request.user.profile.first = False
             request.user.profile.save()
             return redirect('profile')
@@ -74,8 +75,9 @@ def updateprofile(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-            messages.success(request, f'Your account has been updated!')
+            messages.success(request, 'Your account has been updated!')
             return redirect('profile')
+            
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)

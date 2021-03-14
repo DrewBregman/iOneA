@@ -1,12 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
+from django import forms
 # Create your models here.
 class Project(models.Model):
-    admins = models.ManyToManyField(User, limit_choices_to={'is_admin': True})
+
     name = models.CharField(max_length=30)
-    department=models.CharField(max_length=30)
-    numUser=models.IntegerField()
     #owner = models.ForeignKey(User, on_delete=models.CASCADE, null = True)
     bPic = models.ImageField(default='defaultproban.jpg', upload_to='project_banner')
     logo = models.ImageField(default='defaultlogo.jpg', upload_to='project_logo')
@@ -26,12 +25,12 @@ class Project(models.Model):
         ('Systems Engineering', ('Systems Engineering')),
         ('Independent', ('Independent')),
     )
-    projectDepartment = models.CharField(
+    department = models.CharField(
         max_length=50,
         choices=dep_choice1,
         default='Independent',
     )
-
+    description = models.CharField(max_length=50, null = True)
     purpose=models.TextField()
     tag_choice = (
         ('Data Analysis' , ('Data Analysis')),
@@ -61,8 +60,17 @@ class Project(models.Model):
         choices=look,
         default='an engineering cadet,',
     )
- 
 
+    recruit = (
+        ('Yes', ('Yes')),
+        ('No', ('No')),
+    )
+
+    recruiting = models.CharField(
+        max_length=50,
+        choices=recruit,
+        default='Yes',
+    )
     class Meta:
         verbose_name_plural= "projects"
 
@@ -77,8 +85,10 @@ class MemberList(models.Model):
 
 class Member(models.Model):
     memberlist = models.ManyToManyField(MemberList)
+    username = models.CharField(max_length=50, null = True)
+    email = forms.EmailField()
     text = models.CharField(max_length=300)
-    is_admin = models.BooleanField()
-
+    is_admin = models.BooleanField(null=True)
+    admins = models.ManyToManyField(User, limit_choices_to={'is_admin': True})
     def __str__(self):
         return self.text

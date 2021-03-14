@@ -5,27 +5,21 @@
 <body>
     <div class="content-section">
         <div class="media">
-            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" alt="Avatar" style="width:90px; float: left; position:absolute; top: 75px; left: 225px;">
+            <img class="img-rounded" alt="Cinque Terre" src="{{ project.bPic }}" style="width:1000px; 
+                        float: top; position:relative; top: 50px; left: 500px;">
+            <img class="img-rounded" alt="Cinque Terre" src="{{ project.logo }}"style="width:1000px; 
+                        float: top; position:absolute; top: 50px; left: 700px;">
             <div class="media-body">
                 <br></br>
-                <h2 class="account-heading">{{user.profile.username}}</h2>
-                {% if title == 'Faculty' %}
-                <i><p style="color:white;font-size:12px;">Faculty at West Point</p></i>
-                {% else %}
-                <i><p style="color:white;font-size:12px;">Cadet at West Point looking for {{user.profile.lookingFor}}</p></i>
-                {% endif %}
-                <p class="text-secondary">Graduation Year: {{projects.profile.gradYear}}</p>
-                <p class="text-secondary">Company: {{user.profile.company}}</p>
-                <p class="text-secondary">Department of {{user.profile.Department}}</p>
-                <p class="text-secondary">Major: {{user.profile.Major}}</p>
-                <p class="text-secondary">Minor: {{user.profile.Minor}}</p>
-                <p class="text-secondary">{{user.profile.firstName}}'s Interests are {{user.profile.interest}}</p>
-                <p class="text-secondary">{{user.profile.firstName}} has expertise in {{user.profile.expertise}}</p>
-                <p class="text-secondary">{{user.profile.firstName}}'s research goals are {{user.profile.research_goals}}</p>
-            
-                
-
-                <button id="myButton" class="btn info">Update Profile</button>
+                <h1 class="text-secondary">The {{project.department}} department presents {{project.name}}</h1>
+                <p class="text-secondary">{{project.name}} {{project.description}}</p>
+                <p class="text-secondary">{{project.name}} is 
+                                            {% if project.recruiting == "No" %} not currently recruiting.
+                                            {% else %} is currently recruiting members! 
+                                            {{project.name}} is looking for {{project.lookingFor}}</p>
+                                            {% endif %}
+                <p class="text-secondary">The purpose of {{project.name}} is {{project.purpose}}</p>
+                <button id="myButton" class="btn info">Edit Project</button>
                 <script type="text/javascript">
                     document.getElementById("myButton").onclick = function () {
                         location.href = "{% url 'updateprofile' %}";
@@ -59,15 +53,10 @@
 
                     }
                 </style>
-                   
-                
                 <div style="position:absolute; top: 75px; right:75px;">
                         <a href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow {{user.profile.twitter}}</a>
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div> 
-                    
-
-                                            
+                </div>                        
         </div>
     </div>
 </body>

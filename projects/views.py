@@ -2,7 +2,10 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 from .models import Project
 from django.db.models import Q
-from .forms import MembersForm
+from .forms import MembersForm, CreateForm, ProjectUpdateForm
+from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
 
 class SearchResultsView(ListView):
     model = Project
@@ -27,37 +30,41 @@ def createProject(request):
         form = CreateForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('projectpage')
+        return render(request, 'projects/projectpage.html')
+        return redirect('project')
     else:
         form = CreateForm()
     return render(request, 'projects/createProject.html', {'form': form})
 
 #update projects
+#@login_required
+def project(request):
+    return render(request, 'projects/projectpage.html')
+
 def update(request):
     if request.method == "POST":
         m_form = MembersForm(request.POST, instance=request.members)
         pr_form = ProjectUpdateForm(request.POST,
                                     request.FILES,
-                                    instance=request.admins.project)
-        
+                                    instance=request.name)
+    #if is_admin in Member == True: #need to authenticate user, access user permissions, if user has permission:
         if m_form.is_valid() and pr_form.is_valid():
             m_form.save()
             pr_form.save()
             messages.success(request, f'This project has been updated.')
-            request.admins.project.first = False
-            request.admins.project.save()
+            request.name.save()
             return redirect('project')
         else:
             m_form = MembersForm(instance=request.members)
-            pr_form = ProjectUpdateForm(instance=request.admins.project)
+            pr_form = ProjectUpdateForm(instance=request.name)
             context = {
                 'm_form': m_form,
                 'pr_form': pr_form,
             }
 
-            fir_st = request.admins.project.first
-            if fir_st == True:
-                request.admins.project.save()
-                return render(request, 'admins/updateproject.html', context)
+        return render(request, 'projects/updateproject.html', context)
         return redirect('/')
+
+    else:
+        return HttpResponse("Sorry, you do not have permission to edit this project")
 

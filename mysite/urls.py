@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from Notifications import views as n
 from django.conf.urls import url
+from projects import views as p
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,14 +31,16 @@ urlpatterns = [
     path('noti/',n.SearchResultsView.as_view(), name='noti'),
     path('', include('main.urls')),
     path('', include("django.contrib.auth.urls")),
-    path('project/', include('projects.urls')),
     path('', include('projects.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     #url(r'^updateprofile', v.updateprofile),
-    path('updateprofile/', v.updateprofile, name='updateprofile')
+    path('updateprofile/', v.updateprofile, name='updateprofile'),
+    path('createproject/', p.createProject, name='createproject'),
+    path('project/', p.project, name='project'),
+    path('editproject/', p.update, name="updateproject"),
 
-]
+]   
 # /home/start
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
