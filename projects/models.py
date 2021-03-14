@@ -3,10 +3,11 @@ from django.contrib.auth.models import User
 from PIL import Image
 # Create your models here.
 class Project(models.Model):
+    admins = models.ManyToManyField(User, limit_choices_to={'is_admin': True})
     name = models.CharField(max_length=30)
     department=models.CharField(max_length=30)
     numUser=models.IntegerField()
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, null = True)
+    #owner = models.ForeignKey(User, on_delete=models.CASCADE, null = True)
     bPic = models.ImageField(default='defaultproban.jpg', upload_to='project_banner')
     logo = models.ImageField(default='defaultlogo.jpg', upload_to='project_logo')
     dep_choice1 = (
@@ -67,3 +68,17 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+class MemberList(models.Model):
+    members = models.CharField(max_length=2000)
+    def __str__(self):
+        return self.members
+
+
+class Member(models.Model):
+    memberlist = models.ManyToManyField(MemberList)
+    text = models.CharField(max_length=300)
+    is_admin = models.BooleanField()
+
+    def __str__(self):
+        return self.text
