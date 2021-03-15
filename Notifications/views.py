@@ -18,12 +18,13 @@ class SearchResultsView(ListView):
 
 def invite(request):
     if request.method == "POST":
-        form = newUProj(request.POST, instance=request.user)
+        form = newUProj(request.POST)
         if form.is_valid():
-            data = form.cleaned_data.get("user")
             form.save()
+            data = form.cleaned_data.get("user")
+            data1 = form.cleaned_data.get('project')
             #messages.success(request, f'Your account has been updated!')
-            n = Notification(user = data, message = "You have a new project request")
+            n = Notification(user = data, message = "You have a new project request. " + request.user.username + ' wants you to join ' + str(data1) + '.')
             n.save()
             return redirect('profile')
     else:
