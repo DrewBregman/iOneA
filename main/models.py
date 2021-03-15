@@ -63,7 +63,7 @@ class uProjects(models.Model):
     ifAccepted = models.BooleanField(null = False, blank=False)
     ifLeader = models.BooleanField(null = False, blank=False)
     ifAdmin = models.BooleanField(null = False, blank=False)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, null=False, blank=False)
     def __str__(self):
         return self.user.username + ',' + self.project.name
 

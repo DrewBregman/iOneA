@@ -29,6 +29,7 @@ urlpatterns = [
     path('profile/',v.profile, name='profile'),
     path('home/',v.home, name='home'),
     path('noti/',n.SearchResultsView.as_view(), name='noti'),
+    path('invite/',n.invite, name='invite'),
     path('', include('main.urls')),
     path('', include("django.contrib.auth.urls")),
     path('', include('projects.urls')),

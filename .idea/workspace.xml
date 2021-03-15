@@ -25,10 +25,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31a42e0d-f398-404d-915a-0d1ae8991716" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Notifications/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notifications/templates/invite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08-Mar-21_12_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08-Mar-21_12_52__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09-Mar-21_21_29__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09-Mar-21_21_29__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notifications/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,18 +62,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Notifications" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Seth Benson\Desktop\iOneA\main\migrations" />
-      <recent name="C:\Users\Seth Benson\Desktop\iOneA\main" />
-      <recent name="C:\Users\Seth Benson\Desktop\iOneA\users\Templates\users" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Seth Benson\Desktop\iOneA\Notifications\templates" />
       <recent name="C:\Users\Seth Benson\Desktop\iOneA\main" />
       <recent name="C:\Users\Seth Benson\Desktop\iOneA\main\migrations" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\Notifications" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\Notifications\templates" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\main\migrations" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\main" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\users\Templates\users" />
     </key>
   </component>
   <component name="SvnConfiguration">
