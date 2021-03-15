@@ -25,15 +25,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31a42e0d-f398-404d-915a-0d1ae8991716" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Notifications/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notifications/templates/invite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08-Mar-21_12_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08-Mar-21_12_52__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09-Mar-21_21_29__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09-Mar-21_21_29__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notifications/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/templates/invite.html" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/templates/invite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/templates/noti.html" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/templates/noti.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615599410269</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="90% done with invite funcitonality">
+      <created>1615840239009</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615840239009</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,18 +168,19 @@
     <MESSAGE value="fixed your stupid bugs ANDREW" />
     <MESSAGE value="got the launch login screen to work beautifully" />
     <MESSAGE value="Notifications Part1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Notifications Part1" />
+    <MESSAGE value="90% done with invite funcitonality" />
+    <option name="LAST_COMMIT_MESSAGE" value="90% done with invite funcitonality" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1615599409682">
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1615840238453">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615599409682" />
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615840238453" />
     <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1615247257997" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1615599417760">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1615840241269">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615599417760" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615840241269" />
     <state x="430" y="53" key="git4idea.branch.GitSmartOperationDialog" timestamp="1615343359679">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
