@@ -8,9 +8,20 @@ from main.models import uProjects
 from projects.models import Project
 
 class newUProj(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super(newUProj, self).__init__(*args, **kwargs)
+        list = uProjects.objects.filter(user=self.user, ifAdmin = True)
+        #list3 = list.objects
+        list1 = []
+        for item in list:
+            list1.append(item.project.id)
+        self.fields['project'] = forms.ModelChoiceField(queryset=Project.objects.filter(id__in=list1),empty_label=None)
+    #list1 = uProjects.objects(user = self.user)
+    #for uProj in list:
+     #   list1.append(uProj.project)
     user = forms.ModelChoiceField(queryset=User.objects.all(), empty_label=None)
-    project = forms.ModelChoiceField(queryset=Project.objects.all(),empty_label=None)
+    #project = forms.ModelChoiceField(queryset=list1,empty_label=None)
     class Meta:
         model = uProjects
-        fields = ['user', 'project', 'title']
-
+        fields = ['user', 'project', 'title','ifAdmin']

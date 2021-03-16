@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
+from main.models import uProjects
+
 class SearchResultsView(ListView):
     model = Notification
     template_name = 'noti.html'
@@ -18,7 +20,7 @@ class SearchResultsView(ListView):
 
 def invite(request):
     if request.method == "POST":
-        form = newUProj(request.POST)
+        form = newUProj(request.POST,user=request.user)
         if form.is_valid():
             form.save()
             data = form.cleaned_data.get("user")
@@ -28,7 +30,7 @@ def invite(request):
             n.save()
             return redirect('profile')
     else:
-        form = newUProj(request.POST, instance=request.user)
+        form = newUProj(request.POST, user=request.user)
     context = {
         'form': form,
     }
