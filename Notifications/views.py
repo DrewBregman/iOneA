@@ -26,7 +26,8 @@ def invite(request):
             data = form.cleaned_data.get("user")
             data1 = form.cleaned_data.get('project')
             #messages.success(request, f'Your account has been updated!')
-            n = Notification(user = data, message = "You have a new project request. " + request.user.username + ' wants you to join ' + str(data1) + '.')
+            n = Notification(user = data, message = "You have a new project request. " + request.user.username + ' wants you to join ' + str(data1) + '.',
+                             url = 'http://127.0.0.1:8000/agree/' + str(data) + '/' + str(data1))
             n.save()
             return redirect('profile')
     else:
@@ -36,3 +37,5 @@ def invite(request):
     }
     return render(request, 'invite.html', context)
 # Create your views here.
+def approve(request, username, ProjId):
+    return redirect('/Profile')

@@ -40,7 +40,7 @@ urlpatterns = [
     path('createproject/', p.createProject, name='createproject'),
     path('project/', p.project, name='project'),
     path('editproject/', p.update, name="updateproject"),
-
+    path('agree/', include('Notifications.urls')),
 ]   
 # /home/start
 if settings.DEBUG:
