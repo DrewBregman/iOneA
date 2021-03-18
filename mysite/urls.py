@@ -26,7 +26,7 @@ from projects import views as p
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',v.register, name='register'),
-    path('profile/',v.profile, name='profile'),
+    path('profile/<int:id>/',v.profile, name='profile'),
     path('home/',v.home, name='home'),
     path('noti/',n.SearchResultsView.as_view(), name='noti'),
     path('invite/',n.invite, name='invite'),

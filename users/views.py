@@ -61,8 +61,13 @@ def home(request):
     return redirect('/')
 
 @login_required
-def profile(request):
-    return render(request, 'users/profile.html')
+def profile(request, id):
+    profile = Profile.objects.get(id= id)
+    user = profile.user
+    context = {
+        "profile": profile
+    }
+    return render(request, 'users/profile.html', {'dj': user})
 
 @login_required
 def updateprofile(request):

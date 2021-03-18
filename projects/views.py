@@ -37,9 +37,14 @@ def createProject(request):
     return render(request, 'projects/createProject.html', {'form': form})
 
 #update projects
-#@login_required
+@login_required
 def project(request):
-    return render(request, 'projects/projectpage.html')
+    #return render(request, 'projects/projectpage.html')
+    context = locals()
+    template = 'projects/projectpage.html'
+    return render (request, template, context)
+
+
 
 def update(request):
     if request.method == "POST":
