@@ -25,3 +25,9 @@ class newUProj(forms.ModelForm):
     class Meta:
         model = uProjects
         fields = ['user', 'project', 'title','ifAdmin']
+
+class acceptForm(forms.ModelForm):
+    ifAccepted = forms.BooleanField()
+    class Meta:
+        model = uProjects
+        fields = ['ifAccepted']
