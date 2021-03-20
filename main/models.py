@@ -58,6 +58,7 @@ class Item(models.Model):
     
 
 class uProjects(models.Model):
+   
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     ifAccepted = models.BooleanField(null = True, blank=False, default=False)

@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
 from django import forms
+
 # Create your models here.
 class Project(models.Model):
-
     name = models.CharField(max_length=30)
     #owner = models.ForeignKey(User, on_delete=models.CASCADE, null = True)
     bPic = models.ImageField(default='defaultproban.jpg', upload_to='project_banner')
@@ -92,3 +92,4 @@ class Member(models.Model):
     admins = models.ManyToManyField(User, limit_choices_to={'is_admin': True})
     def __str__(self):
         return self.text
+

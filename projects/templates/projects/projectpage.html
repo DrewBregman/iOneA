@@ -5,20 +5,20 @@
 <body>
     <div class="content-section">
         <div class="media">
-            <img class="img-rounded" alt="Cinque Terre" src="{{ project.bPic }}" style="width:1000px; 
+            <img class="img-rounded" src="{{pp.bPic }}" style="width:1000px; 
                         float: top; position:relative; top: 50px; left: 500px;">
-            <img class="img-rounded" alt="Cinque Terre" src="{{ project.logo }}"style="width:1000px; 
+            <img class="img-rounded" src="{{pp.logo }}"style="width:1000px; 
                         float: top; position:absolute; top: 50px; left: 700px;">
             <div class="media-body">
                 <br></br>
-                <h1 class="text-secondary">The {{project.department}} department presents {{project.name}}</h1>
-                <p class="text-secondary">{{project.name}} {{project.description}}</p>
-                <p class="text-secondary">{{project.name}} is 
-                                            {% if project.recruiting == "No" %} not currently recruiting.
+                <h1 class="text-secondary">The {{pp.department}} department presents {{pp.name}}</h1>
+                <p class="text-secondary">{{pp.name}} {{pp.description}}</p>
+                <p class="text-secondary">{{pp.name}} is 
+                                            {% if pp.recruiting == "No" %} not currently recruiting.
                                             {% else %} is currently recruiting members! 
-                                            {{project.name}} is looking for {{project.lookingFor}}</p>
+                                            {{pp.name}} is looking for {{pp.lookingFor}}</p>
                                             {% endif %}
-                <p class="text-secondary">The purpose of {{project.name}} is {{project.purpose}}</p>
+                <p class="text-secondary">The purpose of {{pp.name}} is {{pp.purpose}}</p>
                 <button id="myButton" class="btn info">Edit Project</button>
                 <script type="text/javascript">
                     document.getElementById("myButton").onclick = function () {

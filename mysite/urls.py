@@ -38,7 +38,7 @@ urlpatterns = [
     #url(r'^updateprofile', v.updateprofile),
     path('updateprofile/', v.updateprofile, name='updateprofile'),
     path('createproject/', p.createProject, name='createproject'),
-    path('project/', p.project, name='project'),
+    path('project/<str:name>/', p.project, name='project'),
     path('editproject/', p.update, name="updateproject"),
     path('agree/', include('Notifications.urls')),
 ]   
