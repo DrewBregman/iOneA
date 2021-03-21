@@ -16,8 +16,11 @@ from projects.models import Project
 @login_required()
 def Notifications(request):
     noti = Notification.objects.filter(user = request.user)
+    project = Project.objects.all()
     context = {
         'object_list': noti,
+        'project_list': project
+
     }
     noti1 = Notification.objects.filter(ifViewed = False)
     for object in noti1:
@@ -82,3 +85,18 @@ def accept(request, name1, id):
         }
         return render(request, 'accept.html', context)
     return redirect('/')
+
+def request(request, name, id):
+    if uProjects.objects.filter(user=request.user, project=Project.objects.get(id = id)).exists():
+        pass
+    else:
+        j = uProjects(user=request.user, project=Project.objects.get(id = id), ifAccepted=False)
+        j.save()
+        admins = uProjects.objects.filter(project = Project.objects.get(id = id), ifAccepted = True, ifAdmin = True)
+        for object in admins:
+            n = Notification(user=object.user,
+                             message="You have a new project request. " + request.user.username + ' wants to join ' + str(
+                                 object.project.name) + '.',
+                             url='http://127.0.0.1:8000/allow/' + str(object.user.username) + '/' + str(object.project.id))
+            n.save()
+    return redirect('/profile')

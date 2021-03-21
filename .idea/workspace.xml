@@ -26,7 +26,11 @@
   <component name="ChangeListManager">
     <list default="true" id="31a42e0d-f398-404d-915a-0d1ae8991716" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/Templates/users/profile1.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/Templates/users/profile1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/templates/projects/projectpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/templates/projects/projectpage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616363175830</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="email link in top-right corner">
+      <created>1616363678577</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1616363678577</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,18 +227,19 @@
     <MESSAGE value="the ultimate champ of power automate" />
     <MESSAGE value="cleaned up notifications" />
     <MESSAGE value="fixed the profile stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the profile stuff" />
+    <MESSAGE value="email link in top-right corner" />
+    <option name="LAST_COMMIT_MESSAGE" value="email link in top-right corner" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1616363175330">
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1616363678086">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616363175330" />
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616363678086" />
     <state x="253" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1616217293713" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1616363177893">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1616363679915">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616363177893" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616363679915" />
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1616217296601" />
     <state x="430" y="53" key="git4idea.branch.GitSmartOperationDialog" timestamp="1615343359679">
       <screen x="0" y="0" width="1280" height="680" />
