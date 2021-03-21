@@ -24,13 +24,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31a42e0d-f398-404d-915a-0d1ae8991716" name="Default Changelist" comment="small little change, I think getting approval to work is gonna be a little bit of a grind">
-      <change afterPath="$PROJECT_DIR$/Notifications/templates/accept.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08-Mar-21_12_52__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08-Mar-21_12_52__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09-Mar-21_21_29__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09-Mar-21_21_29__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="31a42e0d-f398-404d-915a-0d1ae8991716" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08-Mar-21_12_52_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08-Mar-21_12_52__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09-Mar-21_21_29_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09-Mar-21_21_29__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notifications/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notifications/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/templates/accept.html" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/templates/accept.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notifications/templates/noti.html" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/templates/noti.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notifications/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -174,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615853407964</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="the ultimate champ of power automate">
+      <created>1616217294265</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616217294265</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,19 +208,20 @@
     <MESSAGE value="improved aesthetics with notification pages" />
     <MESSAGE value="notification doing great" />
     <MESSAGE value="notification vibing" />
-    <option name="LAST_COMMIT_MESSAGE" value="notification vibing" />
+    <MESSAGE value="the ultimate champ of power automate" />
+    <option name="LAST_COMMIT_MESSAGE" value="the ultimate champ of power automate" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1615853406402">
+    <state x="253" y="0" key="CommitChangelistDialog2" timestamp="1616217293713">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615845985160" />
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1615853406402" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1615853431396">
+    <state x="253" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1616217293713" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1616361945605">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615845988923" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1615853431396" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616361945605" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1616217296601" />
     <state x="430" y="53" key="git4idea.branch.GitSmartOperationDialog" timestamp="1615343359679">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

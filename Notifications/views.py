@@ -13,24 +13,33 @@ from main.models import uProjects
 from django.contrib.auth.models import User
 from projects.models import Project
 
-class SearchResultsView(ListView):
-    model = Notification
-    template_name = 'noti.html'
-
-    def get_queryset(self):
-        return Notification.objects.filter(user = self.request.user)
+@login_required()
+def Notifications(request):
+    noti = Notification.objects.filter(user = request.user)
+    context = {
+        'object_list': noti,
+    }
+    noti1 = Notification.objects.filter(ifViewed = False)
+    for object in noti1:
+        object.ifViewed = True
+        object.save()
+    return render(request, 'noti.html', context)
 
 def invite(request):
     if request.method == "POST":
         form = newUProj(request.POST,user=request.user)
         if form.is_valid():
-            form.save()
             data = form.cleaned_data.get("user")
             data1 = form.cleaned_data.get('project')
+            data2 = data1.id
             #messages.success(request, f'Your account has been updated!')
             n = Notification(user = data, message = "You have a new project request. " + request.user.username + ' wants you to join ' + str(data1) + '.',
-                             url = 'http://127.0.0.1:8000/accept/' + str(data) + '/' + str(data1))
-            n.save()
+                             url = 'http://127.0.0.1:8000/accept/' + str(data) + '/' + str(data2))
+            if uProjects.objects.filter(user = data, project = data1).exists():
+                pass
+            else:
+                n.save()
+                form.save()
             return redirect('/')
     else:
         form = newUProj(request.POST, user=request.user)
@@ -40,9 +49,9 @@ def invite(request):
     return render(request, 'invite.html', context)
 # Create your views here.
 @login_required
-def accept(request, name1, name2):
+def accept(request, name1, id):
     user = User.objects.get(username=name1)
-    project = Project.objects.get(name=name2)
+    project = Project.objects.get(id = id)
     if uProjects.objects.filter(user = user, project = project).exists():
         context = {
             "user": user,
@@ -69,6 +78,7 @@ def accept(request, name1, name2):
             form = acceptForm(request.POST)
         context = {
             'form': form,
+            'projname': project.name
         }
         return render(request, 'accept.html', context)
     return redirect('/')

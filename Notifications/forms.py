@@ -11,7 +11,7 @@ class newUProj(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)
         super(newUProj, self).__init__(*args, **kwargs)
-        list = uProjects.objects.filter(user=self.user, ifAdmin = True)
+        list = uProjects.objects.filter(user=self.user, ifAdmin = True, ifAccepted = True)
         #list3 = list.objects
         list1 = []
         for item in list:

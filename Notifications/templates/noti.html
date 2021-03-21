@@ -8,11 +8,13 @@
     {% for Notification in object_list %}
     <li>
         {{Notification.message}}
-        {{Notification.url}}
+        <a href={{Notification.url}}>View</a>
     </li>
-        <% if  Notification.ifViewed == True %>
-            NEW
-        <%endif%>
+    <ul>
+    <% if  Notification.ifViewed == True %>
+        NEW
+    <%endif%>
+    </ul>
 
     {% endfor %}
 </ul>
