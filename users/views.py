@@ -67,6 +67,15 @@ def profile(request, id):
     context = {
         "profile": profile
     }
+    return render(request, 'users/profile1.html', {'dj': user})
+
+@login_required
+def profile1(request):
+    profile = request.user.profile
+    user = profile.user
+    context = {
+        "profile": profile
+    }
     return render(request, 'users/profile.html', {'dj': user})
 
 @login_required
