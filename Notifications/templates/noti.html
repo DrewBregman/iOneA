@@ -11,9 +11,9 @@
         <a href={{Notification.url}}>View</a>
     </li>
     <ul>
-    <% if  Notification.ifViewed == True %>
+    {% if  Notification.ifViewed == False %}
         NEW
-    <%endif%>
+    {%endif%}
     </ul>
 
     {% endfor %}

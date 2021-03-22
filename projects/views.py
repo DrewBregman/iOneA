@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, ListView
 from .models import Project
 from users.models import Profile
@@ -8,6 +8,9 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
+from django.contrib import messages
+from main.models import uProjects
+
 
 def SearchResultsView(request):
 
@@ -33,8 +36,10 @@ def createProject(request):
         form = CreateForm(request.POST)
         if form.is_valid():
             form.save()
-        return render(request, 'projects/projectpage.html')
-        return redirect('project')
+            n = uProjects(user = request.user, project = Project.objects.get(name = form.cleaned_data.get('name'), purpose = form.cleaned_data.get('purpose')), ifAdmin = True, ifAccepted = True)
+            n.save()
+        #return render(request, 'projects/projectpage.html')
+        return redirect('/project/' + form.cleaned_data.get('name'))
     else:
         form = CreateForm()
     return render(request, 'projects/createProject.html', {'form': form})
@@ -42,14 +47,18 @@ def createProject(request):
 #update projects
 @login_required
 def project(request, name):
+
     #return render(request, 'projects/projectpage.html')
     project = Project.objects.get(name= name)
-  
+
+    j = True
+    if uProjects.objects.filter(project = Project.objects.get(name = name), user = request.user):
+        j = False
 
     context = {
         "project": project
     }
-    return render(request, 'projects/projectpage.html', {'pp': project})
+    return render(request, 'projects/projectpage.html', {'pp': project, 'boo':j})
 
 def update(request):
     if request.method == "POST":

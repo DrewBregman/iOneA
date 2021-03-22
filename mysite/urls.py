@@ -33,6 +33,7 @@ urlpatterns = [
     path('invite/',n.invite, name='invite'),
     path('accept/<str:name1>/<int:id>/', n.accept, name='accept'),
     path('project/<str:name>/request/<int:id>', n.request, name= 'request'),
+    path('allow/<str:name1>/<int:id>/', n.allow, name = 'allow'),
     path('', include('main.urls')),
     path('', include("django.contrib.auth.urls")),
     path('', include('projects.urls')),

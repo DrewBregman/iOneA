@@ -33,3 +33,11 @@ class acceptForm(forms.ModelForm):
     class Meta:
         model = uProjects
         fields = ['ifAccepted']
+
+class allowForm(forms.ModelForm):
+    ifAccepted = forms.BooleanField(required=False)
+    ifAdmin = forms.BooleanField(required=False)
+    title = forms.CharField(required=False)
+    class Meta:
+        model = uProjects
+        fields = ['ifAccepted', 'title', 'ifAdmin']

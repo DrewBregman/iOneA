@@ -25,9 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31a42e0d-f398-404d-915a-0d1ae8991716" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Notifications/templates/allow.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/templates/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/templates/search_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/templates/noti.html" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/templates/noti.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/templates/projects/projectpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/templates/projects/projectpage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +62,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/users/Templates/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Notifications/templates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -66,8 +71,8 @@
       <recent name="C:\Users\Seth Benson\Desktop\iOneA\main\migrations" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Seth Benson\Desktop\iOneA\users\Templates\users" />
       <recent name="C:\Users\Seth Benson\Desktop\iOneA\Notifications\templates" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\users\Templates\users" />
       <recent name="C:\Users\Seth Benson\Desktop\iOneA\Notifications" />
       <recent name="C:\Users\Seth Benson\Desktop\iOneA\main\migrations" />
       <recent name="C:\Users\Seth Benson\Desktop\iOneA\main" />
@@ -203,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616371077210</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Haha">
+      <created>1616372189318</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1616372189318</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,18 +246,19 @@
     <MESSAGE value="fixed the profile stuff" />
     <MESSAGE value="email link in top-right corner" />
     <MESSAGE value="Half done with request-to-join functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Half done with request-to-join functionality" />
+    <MESSAGE value="Haha" />
+    <option name="LAST_COMMIT_MESSAGE" value="Haha" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1616371076653">
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1616372188445">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616371076653" />
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616372188445" />
     <state x="253" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1616217293713" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1616371079007">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1616372192988">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616371079007" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616372192988" />
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1616217296601" />
     <state x="430" y="53" key="git4idea.branch.GitSmartOperationDialog" timestamp="1615343359679">
       <screen x="0" y="0" width="1280" height="680" />
