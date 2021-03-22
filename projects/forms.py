@@ -12,8 +12,7 @@ class MembersForm(ModelForm):
         model = Member
         fields = ['username', 'is_admin']
 
-class ProjectUpdateForm(ModelForm):
-    
+class ProjectUpdateForm(forms.ModelForm):
     class Meta:
         model = Project
         fields=['name', 'department', 'department','bPic', 'logo',
