@@ -1,26 +1,29 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 from .models import Project
+from users.models import Profile
 from django.db.models import Q
 from .forms import MembersForm, CreateForm, ProjectUpdateForm
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.models import User
 
-class SearchResultsView(ListView):
-    model = Project
-    template_name = 'search_results.html'
-    
-    def get_queryset(self):
-        query=self.request.GET.get('q')
-        object_list=Project.objects.filter(
-            Q(name__icontains=query) | Q(projectTag__icontains=query)
-        )
-        object_list1=Project.objects.filter(
-            Q(department__icontains=query)
-        )
-        final_list = list(set(object_list) | set(object_list1))
-        return final_list
+def SearchResultsView(request):
+
+    query=request.GET.get('q')
+    object_list=Project.objects.filter(
+    Q(name__icontains=query) | Q(projectTag__icontains=query))
+    object_list1=Project.objects.filter(Q(department__icontains=query))
+    profilelist1 = Profile.objects.filter(Q(firstName =query) | Q(interest=query))
+    final_list = list(set(object_list) | set(object_list1))
+    profile_list = list(set(profilelist1))
+    context = {
+        'object_list': final_list,
+        'profile_list': profile_list
+
+    }
+    return render(request, 'search_results.html', context)
 
 class SearchPageView(TemplateView):
     template_name = 'searchbar.html'
