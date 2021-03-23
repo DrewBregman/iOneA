@@ -2,14 +2,26 @@
 <html>
 {% block content %}
 
+<head>
+    <style type="text/css">
+        .searchbar{
+            width: 100%;
+            text-align:center;
+            padding-bottom: 300px;
+            padding-top:100px;
+        }
+    </style>
+</head>
 <body>
-    <div style ="text-align:center; vertical-align:center; display:table-cell;">
-        <h1>Search</h1>
+    
 
-        <form action="{% url 'search_results' %}" method="get">
-            <input name="q" type="text" placeholders="Search...">
-        </form>
-    </div>
+    <div class="searchbar">
+        <h1>Search</h1>
+		<form action="{% url 'search_results' %}" method="get" >
+			<input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+				aria-describedby="search-addon" name="q"/>
+		</form>
+	</div>
 </body>
 {%endblock%}
 

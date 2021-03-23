@@ -7,14 +7,14 @@
 <ul>
     {% for project in object_list %}
      <li>
-        {{project.name}}, {{project.department}}, {{project.projectTag}}
+        Project: {{project.name}}, of {{project.department}} Department. <a href="/project/{{project.name}}/">View Details.</a> 
      </li>
     {% endfor %}
 </ul>
 <ul>
     {% for profile in profile_list %}
      <li>
-        {{profile.firstName}}, {{profile.lastName}}
+        User: {{profile.firstName}} {{profile.lastName}}, of {{profile.department}}. Class of {{profile.gradYear}}. <a href="/profile/{{profile.id}}/">View Details.</a> 
      </li>
     {% endfor %}
 </ul>

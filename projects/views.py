@@ -4,12 +4,14 @@ from .models import Project
 from users.models import Profile
 from django.db.models import Q
 from .forms import MembersForm, CreateForm, ProjectUpdateForm
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from django.contrib import messages
 from main.models import uProjects
+from django.contrib.auth.decorators import user_passes_test
+from functools import wraps
 
 
 def SearchResultsView(request):
@@ -54,36 +56,42 @@ def project(request, name):
     j = True
     if uProjects.objects.filter(project = Project.objects.get(name = name), user = request.user):
         j = False
-
+    url = '/editproject/' + name
     context = {
-        "project": project
+        "pp": project,
+        "projurl": url,
+        'boo':j
     }
-    return render(request, 'projects/projectpage.html', {'pp': project, 'boo':j})
+    return render(request, 'projects/projectpage.html', context)
 
-def update(request):
+
+def admin_check(function):
+  @wraps(function)
+  def wrap(request, *args, **kwargs):
+        user = request.user
+        name = kwargs.get('name')  
+        if uProjects.objects.filter(project=Project.objects.get(name=name), user=user, ifAdmin=True).exists():
+             return function(request, *args, **kwargs)
+        else:
+            return HttpResponseRedirect('/')
+  return wrap
+
+@admin_check
+def update(request, name):
+    project = Project.objects.get(name = name)
     if request.method == "POST":
-        m_form = MembersForm(request.POST, instance=request.members)
         pr_form = ProjectUpdateForm(request.POST,
                                     request.FILES,
-                                    instance=request.name)
+                                    instance=project)
     #if is_admin in Member == True: #need to authenticate user, access user permissions, if user has permission:
-        if m_form.is_valid() and pr_form.is_valid():
-            m_form.save()
+        if pr_form.is_valid():
             pr_form.save()
             messages.success(request, f'This project has been updated.')
-            request.name.save()
             return redirect('project')
-        else:
-            m_form = MembersForm(instance=request.members)
-            pr_form = ProjectUpdateForm(instance=request.name)
-            context = {
-                'm_form': m_form,
-                'pr_form': pr_form,
-            }
-
-        return render(request, 'projects/updateproject.html', context)
-        return redirect('/')
-
+        
     else:
-        return HttpResponse("Sorry, you do not have permission to edit this project")
-
+        pr_form = ProjectUpdateForm(instance=project)
+    context = {
+        'pr_form': pr_form
+    }
+    return render(request, 'projects/updateproject.html', context)
