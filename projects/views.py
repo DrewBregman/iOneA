@@ -54,7 +54,7 @@ def project(request, name):
     project = Project.objects.get(name= name)
 
     j = True
-    if uProjects.objects.filter(project = Project.objects.get(name = name), user = request.user):
+    if uProjects.objects.filter(project = Project.objects.get(name = name), user = request.user) or project.recruiting == False:
         j = False
     url = '/editproject/' + name
     context = {
