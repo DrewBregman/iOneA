@@ -85,9 +85,12 @@ def update(request, name):
                                     instance=project)
     #if is_admin in Member == True: #need to authenticate user, access user permissions, if user has permission:
         if pr_form.is_valid():
+            instance= pr_form.save()
             pr_form.save()
             messages.success(request, f'This project has been updated.')
-            return redirect('project')
+           
+        
+            return redirect('project', name=instance.name)
         
     else:
         pr_form = ProjectUpdateForm(instance=project)
