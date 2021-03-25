@@ -71,6 +71,17 @@ class Project(models.Model):
         choices=recruit,
         default='Yes',
     )
+    statusOptions = (
+        ('Active', ('Active')),
+        ('Archived', ('Archived')),
+        ('Deleted', ('Deleted')),
+    )
+
+    status = models.CharField(
+        max_length=50,
+        choices=statusOptions,
+        default='Active',
+    )
     class Meta:
         verbose_name_plural= "projects"
 

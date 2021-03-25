@@ -51,6 +51,14 @@ INSTALLED_APPS = [
     #'phonenumber_field',
     'django_cleanup',
     'Notifications',
+    'AIAD',
+    'comments',
+    'departments',
+    'friends',
+    'directMessage',
+    'posts',
+    'reactions',
+    'teams',
 ]
 
 MIDDLEWARE = [

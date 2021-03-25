@@ -22,6 +22,7 @@ from django.contrib.auth import views as auth_views
 from Notifications import views as n
 from django.conf.urls import url
 from projects import views as p
+from posts import views as q
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -46,6 +47,8 @@ urlpatterns = [
     path('editproject/<str:name>/', p.update, name="editproject"),
     #path('editproject/', v.home, name="editproject"),
     path('agree/', include('Notifications.urls')),
+    path('posts/', q.placeholder, name="postplaceholder"),
+   
 ]   
 # /home/start
 if settings.DEBUG:

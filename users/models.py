@@ -75,6 +75,17 @@ class Profile(models.Model):
     gradYear = models.IntegerField(blank=True, default=2023)
     company = models.CharField(max_length=2, blank=True, default="")
     phone = models.IntegerField(null=False, blank=False, default=+11111111111)
+    statusOptions = (
+        ('Active', ('Active')),
+        ('Archived', ('Archived')),
+        ('Deleted', ('Deleted')),
+    )
+
+    status = models.CharField(
+        max_length=50,
+        choices=statusOptions,
+        default='Active',
+    )
 
     def __str__(self):
         return f'{self.user.username} Profile'

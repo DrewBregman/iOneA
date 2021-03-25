@@ -72,21 +72,3 @@ class uProjects(models.Model):
 
 # andrew_user = userID(username="andrewbregman", firstName="Andrew", lastName="bregman", email="andrew.bregman@westpoint.edu", phone=8563832480, gradYear="2023-5-23", company="D2")
 
-
-class Department(models.Model):
-    name = models.CharField(max_length=30)
-
-    def __str__(self):
-        return self.name
-
-class uDeparment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.user.username + ',' + self.department.name
-
-class projDepartment(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.project.name + ',' + self.department.name
