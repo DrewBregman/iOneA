@@ -104,3 +104,15 @@ class Member(models.Model):
     def __str__(self):
         return self.text
 
+
+
+class uProjects(models.Model):
+   
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="u")
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="uProj")
+    ifAccepted = models.BooleanField(null = True, blank=False, default=False)
+    #ifLeader = models.BooleanField(null = False, blank=False)
+    ifAdmin = models.BooleanField(null = True, blank=False, default=False)
+    title = models.CharField(max_length=100, null=False, blank=False)
+    def __str__(self):
+        return self.user.username + ',' + self.project.name

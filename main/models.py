@@ -57,16 +57,6 @@ class Item(models.Model):
 
     
 
-class uProjects(models.Model):
-   
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    ifAccepted = models.BooleanField(null = True, blank=False, default=False)
-    #ifLeader = models.BooleanField(null = False, blank=False)
-    ifAdmin = models.BooleanField(null = True, blank=False, default=False)
-    title = models.CharField(max_length=100, null=False, blank=False)
-    def __str__(self):
-        return self.user.username + ',' + self.project.name
 
 
 
