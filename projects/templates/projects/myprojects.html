@@ -4,10 +4,29 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <ul>
-    {% for project in object_list %}
-     <li>
-        Project: {{project.name}}, of {{project.department}} Department. <a href="/project/{{project.name}}/">View Details.</a> 
-     </li>
+    
+<div class="currentProjects">
+<h4><u> Current Projects</u></h4>
+    {% for uproj in object_list %}
+    {% if uproj.project.status == "Active"%}
+    
+        <li>
+            {{uproj.project.name}}, of {{uproj.project.department}} Department. <a href="/project/{{uproj.project.name}}/">View Details.</a> 
+        </li>
+    {% endif %}
     {% endfor %}
-</ul>
+</div>
+<div class="pastProjects">
+<h4><u> Past Projects</u></h4>
+    {% for uproj in object_list %}
+    {% if uproj.project.status == "Archived"%}
+    
+        <li>
+            {{uproj.project.name}}, of {{uproj.project.department}} Department. <a href="/project/{{uproj.project.name}}/">View Details.</a> 
+        </li>
+    {% endif %}
+    {% endfor %}
+</div>
+
+
 {% endblock %}
