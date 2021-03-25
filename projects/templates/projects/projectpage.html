@@ -27,11 +27,12 @@
                                             {% endif %}
                 <p class="text"><b><u>The purpose</u></b> of {{pp.name}} is {{pp.purpose}}</p>
     <div class="join">
-        <p>Click here to
-            <a href="request/{{pp.id}}">request to join the project</a>.
-        </p>
-    </div>               
-                
+            {% if boo == True %}
+            <p>Click here to
+                <a href="request/{{pp.id}}">request to join the project</a>.
+            </p>
+            {% endif %}
+    </div>
                
                 <button id="myButton" class="btn info"><b>Edit Project</b></button>
                 <script type="text/javascript">
