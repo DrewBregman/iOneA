@@ -48,6 +48,7 @@ urlpatterns = [
     #path('editproject/', v.home, name="editproject"),
     path('agree/', include('Notifications.urls')),
     path('posts/', q.placeholder, name="postplaceholder"),
+    path('myprojects/', p.myProjects, name="myprojects"),
    
 ]   
 # /home/start

@@ -1,0 +1,13 @@
+{% extends "main/base.html" %}
+
+{%block title %} My Projects {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <ul>
+    {% for project in object_list %}
+     <li>
+        Project: {{project.name}}, of {{project.department}} Department. <a href="/project/{{project.name}}/">View Details.</a> 
+     </li>
+    {% endfor %}
+</ul>
+{% endblock %}

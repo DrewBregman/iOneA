@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from django.contrib import messages
-from main.models import uProjects
+from .models import uProjects
 from django.contrib.auth.decorators import user_passes_test
 from functools import wraps
 
@@ -98,3 +98,14 @@ def update(request, name):
         'pr_form': pr_form
     }
     return render(request, 'projects/updateproject.html', context)
+
+
+@login_required
+def myProjects(request):
+    user = request.user
+    object_list=uProjects.objects.filter(user=user) 
+    context = {
+        'object_list': object_list,
+    }
+    return render(request, 'projects/myprojects.html', context)
+

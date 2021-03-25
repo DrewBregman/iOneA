@@ -4,7 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Notification
-from main.models import uProjects
+from projects.models import uProjects
 from projects.models import Project
 
 class newUProj(forms.ModelForm):

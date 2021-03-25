@@ -9,9 +9,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
-from main.models import uProjects
+
 from django.contrib.auth.models import User
-from projects.models import Project
+from projects.models import Project, uProjects
 
 @login_required()
 def Notifications(request):
