@@ -19,10 +19,12 @@ def SearchResultsView(request):
     query=request.GET.get('q')
     object_list=Project.objects.filter(
     Q(name__icontains=query) | Q(projectTag__icontains=query))
-    object_list1=Project.objects.filter(Q(department__icontains=query))
-    profilelist1 = Profile.objects.filter(Q(firstName =query) | Q(interest=query))
+    object_list1=Project.objects.filter(Q(department__icontains=query) | Q(lookingFor__icontains=query))
+    profilelist1 = Profile.objects.filter(Q(firstName__icontains =query) | Q(interest__icontains=query))
+    profilelist2 = Profile.objects.filter(Q(lastName__icontains =query) | Q(company__icontains=query))
+    profilelist2 = Profile.objects.filter(Q(lastName__icontains =query) | Q(company__icontains=query) | Q(Department__icontains=query))
     final_list = list(set(object_list) | set(object_list1))
-    profile_list = list(set(profilelist1))
+    profile_list = list(set(profilelist1) | set(profilelist2))
     context = {
         'object_list': final_list,
         'profile_list': profile_list
