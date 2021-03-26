@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'posts',
     'reactions',
     'teams',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [

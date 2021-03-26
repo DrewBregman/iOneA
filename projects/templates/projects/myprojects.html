@@ -8,7 +8,7 @@
 <div class="currentProjects">
 <h4><u> Current Projects</u></h4>
     {% for uproj in object_list %}
-    {% if uproj.project.status == "Active"%}
+    {% if uproj.project.status == "Active" and uproj.ifAccepted == True %}
     
         <li>
             {{uproj.project.name}}, of {{uproj.project.department}} Department. <a href="/project/{{uproj.project.name}}/">View Details.</a> 

@@ -16,7 +16,7 @@ class ProjectUpdateForm(forms.ModelForm):
     class Meta:
         model = Project
         fields=['name', 'department', 'department','bPic', 'logo',
-        'department', 'purpose', 'projectTag', 'lookingFor', 'recruiting']
+        'description', 'purpose', 'projectTag', 'lookingFor', 'recruiting']
 class CreateForm(ModelForm):
     class Meta:
         model = MemberList

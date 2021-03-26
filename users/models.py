@@ -2,13 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
 from Notifications.models import Notification
+from multiselectfield import MultiSelectField
+from django import forms
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    firstName = models.CharField(max_length = 25, null=False, blank=False, default="Enter your first name")
-    lastName =  models.CharField(max_length = 25, null=False, blank=False, default="Enter your last name")
+    firstName = models.CharField("First Name", max_length = 25, null=False, blank=False, default="")
+    lastName =  models.CharField("Last Name",max_length = 25, null=False, blank=False, default="")
     #username = models.CharField(max_length=25, null=False, blank=False, unique=True, default=User.username)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    image = models.ImageField("Profile Picture",default='default.jpg', upload_to='profile_pics')
     email =  models.EmailField(default="")
     first = models.BooleanField(default = True)
     #MeetMe = models.TextField()
@@ -38,24 +40,27 @@ class Profile(models.Model):
     #title = models.CharField(max_length=30, null=False, blank=False)
     Major = models.CharField(max_length=50, null=False, blank=False, default="Undeclared")
     Minor = models.CharField(max_length=50, null=True, blank=True)
-    interest = models.TextField(default="What academic or commercial areas are you interested in?")
-    expertise = models.TextField(default="Do you have any niche skills? For example: I can design and 3D print on SolidWorks.")
-    research_goals = models.TextField(default="What do you want to get out of reserach? For example, you may be interested in research purely to pursue passion, or you may want to work towards a graduate school scholarship")
+    interest = models.TextField("What Are Your Interests?", default="Your academic or commmercial interests are...")
+    expertise = models.TextField("Please list Your Areas of Expertise (separate by commas)", default="You have expertise in...")
+    research_goals = models.TextField("What Do You Want To Get Out Of Research?", default="Your research goals are...")
     look = (
-        ('a research team to join.', ('Established Research Team')),
-        ('a project to work on.', ('A fun project')),
-        ('faculty to work under.', ('A faculty mentor')),
-        ('nothing at the moment.', ('Nothing')),
-        ('motivated cadets.', ('Recruiting Cadets')),
-        ('anyone who needs help.', ('I want to help other people')),
-        ('cadets looking to do research for three or four years.', ('Cadets interested in research that works towards a scholarship')),
+        ('a research team to join.', ('an established Research Team')),
+        ('a project to work on.', ('a fun project to work on')),
+        ('faculty to work under.', ('a faculty mentor')),
+        ('nothing at the moment.', ('nothing at the moment')),
+        ('start project', ('to start a research project')),
+        ('anyone who needs help.', ('the opportunity to help other people however I can')),
+        ('cadets looking to do research for three or four years.', ('cadets interested in research that works towards a scholarship')),
+        ('cadets who want to join a project.', ('cadets who want to join a project')),
+        ('AIADs.', ('AIADs')),
     )
-    
-    lookingFor = models.CharField(
-        max_length=75,
-        choices=look,
-        default='nothing at the moment.',
-    )
+    #lookingFor = models.CharField(
+        #max_length=75,
+        #choices=look, lookOne, lookTwo,
+        #default='nothing at the moment.',
+    #)
+
+    lookingFor = MultiSelectField("What Are You Currently Looking For?", choices= look, max_choices=3)
     faculty_cadet = (
         ('Faculty', ('Faculty')),
         ('Cadet', ('Cadet')),
@@ -66,15 +71,15 @@ class Profile(models.Model):
         choices=faculty_cadet,
         default='Cadet',
     )
-    twitter = models.CharField(max_length=30, null=False, blank=False, default="@")
+    twitter = models.CharField(max_length=30, null=True, blank=True, default="@")
     #insta = models.CharField(max_length=30, null=False, blank=False)
     #facebook = models.CharField(max_length=30, null=False, blank=False)
     #linkedin = models.CharField(max_length=30, null=False, blank=False)
     #tictok = models.CharField(max_length=30, null=False, blank=False)
 
-    gradYear = models.IntegerField(blank=True, default=2023)
-    company = models.CharField(max_length=2, blank=True, default="")
-    phone = models.IntegerField(null=False, blank=False, default=+11111111111)
+    gradYear = models.IntegerField("Graduation Year", null=True, blank=True, default=2023)
+    company = models.CharField(max_length=2, null=True, blank=True, default="")
+    phone = models.IntegerField("Phone Number", null=False, blank=False, default=True)
     statusOptions = (
         ('Active', ('Active')),
         ('Archived', ('Archived')),

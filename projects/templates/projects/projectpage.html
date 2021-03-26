@@ -18,14 +18,14 @@
             </div>
                 <div class="media-body">
                 <br>
-                <h1 class="text">The {{pp.department}} department presents {{pp.name}}</h1>
-                <p class="text">{{pp.name}}'s <b><u>mission</u></b> is to {{pp.description}}</p>
+                <h1 class="head">The {{pp.department}} department presents {{pp.name}}</h1>
+                <p class="text"><b>Mission:</b>{{pp.name}}'s mission is to {{pp.description}}</p>
                 <p class="text">{{pp.name}} is 
                                             {% if pp.recruiting == "No" %} <b><u>not currently recruiting.</u></b>
                                             {% else %} is <b><u>currently recruiting members!</u></b>
                                             They are looking for {{pp.lookingFor}}</p>
                                             {% endif %}
-                <p class="text"><b><u>The purpose</u></b> of {{pp.name}} is {{pp.purpose}}</p>
+                <p class="text"><b>Purpose:</b> the purpose of {{pp.name}} is {{pp.purpose}}</p>
     <div class="join">
             {% if boo == True %}
             <p>Click here to
@@ -44,12 +44,12 @@
             
                 <style type="text/css">
                     .join{
-                        font-size: 12px;
+                        font-size: 18px;
                         font-family: Garamond, serif;
                         color: #ffc400;
                         position: absolute;
-                        top:110px;
-                        left: 1300px;
+                        top:280px;
+                        left: 980px;
 
                     }
 
@@ -60,10 +60,10 @@
                     .bannerName{
                         font-family: 'Syne Mono', monospace;
                         color:white;
-                        position: absolute;
-                        top:175px;
-                        left:550px;
-                        font-size: 45px;
+                        position: relative;
+                        top:-100px;
+                        left:-150px;
+                        font-size: 40px;
                         
                     }
 
@@ -72,13 +72,15 @@
                         top: 0;
                        
                         width: 1000px;
-                        height: 150px
+                        height: 150px;
+                        left: -175px;
+                 
                     }
 
                     .logo{
                         position: absolute;
                         top: 131px;
-                        left: 1390px;
+                        left: 1100px;
                         width: 150px;
                         height: 150px;
                     }
@@ -91,6 +93,10 @@
                         font-size: 14px;
                         cursor: pointer;
                         border-radius:5px;
+                        position: absolute;
+                        top:300px;
+                        left: 975px;
+
                     }
 
                     .info {
@@ -103,12 +109,23 @@
                         color: white;
                     }
 
+                    .head{
+                        position: relative;
+                        left: -150px;
+                        top: -75px;
+                        font-family: Garamond, serif;
+                        color: #e25822;
+                    }
                     .text {
-                        font-size: 25px;
+                        position: relative;
+                        left: -150px;
+                        top: -75px;
+                        font-size: 18px;
                         font-family: Garamond, serif;
                         color: #ffc400;
 
                     }
+
                 </style>
                 <div style="position:absolute; top: 75px; right:75px;">
                         <a href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow {{user.profile.twitter}}</a>

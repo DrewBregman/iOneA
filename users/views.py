@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from .models import Profile
+from django.contrib.auth.models import User
 
 # Create your views here.
 def register(request):
@@ -14,11 +15,12 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-        return redirect('login')
+            #j = Profile(user = User.objects.get(username = username))
+            #j.save()
+            return redirect('login')
         #messages.success(request, 'Your account has been created! You are now able to log in')
         #return HttpResponse("regii")
-    else:
-        form = RegisterForm()
+    form = RegisterForm()
     return render(request, "users/register.html", {'form':form})
 
 def home(request):
