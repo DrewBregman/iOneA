@@ -39,11 +39,43 @@
                         <a href="mailto:{{dj.profile.email}}">send email</a>.
                         </p>
                 </div>
-                    
-
+                <div class="contactButton">
+                    <button id="myButton" class="btn info"><b>Contact</b></button>
+                    <script type="text/javascript">
+                        
+                        document.getElementById("myButton").onclick = function () {
+                            location.href = 'mailto:{{dj.profile.email}}';
+                        };
+                    </script>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
+<style type="text/css">
+    .btn {
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+        padding: 12px 24px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius:5px;
+        position: absolute;
+        top:180px;
+        left: 1000px;
+    }
+
+    .info {
+        border-color: #ffc400;
+        color: #ffc400;
+    }
+
+    .info:hover {
+                background: #fc6e04;
+                color: white;
+    }
+</style>
 {% endblock content %}
 </html>
