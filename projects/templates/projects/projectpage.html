@@ -19,13 +19,13 @@
                 <div class="media-body">
                 <br>
                 <h1 class="head">The {{pp.department}} department presents {{pp.name}}</h1>
-                <p class="text"><b>Mission:</b>{{pp.name}}'s mission is to {{pp.description}}</p>
+                <p class="text"><b>Mission: </b>{{pp.name}}'s mission is to {{pp.description}}</p>
                 <p class="text">{{pp.name}} is 
                                             {% if pp.recruiting == "No" %} <b><u>not currently recruiting.</u></b>
                                             {% else %} is <b><u>currently recruiting members!</u></b>
                                             They are looking for {{pp.lookingFor}}</p>
                                             {% endif %}
-                <p class="text"><b>Purpose:</b> the purpose of {{pp.name}} is {{pp.purpose}}</p>
+                <p class="text">The <b> purpose</b> of {{pp.name}} is {{pp.purpose}}</p>
     <div class="join">
             {% if boo == True %}
             <p>Click here to
@@ -79,8 +79,8 @@
 
                     .logo{
                         position: absolute;
-                        top: 131px;
-                        left: 1100px;
+                        top: 155px;
+                        left: 1025px;
                         width: 150px;
                         height: 150px;
                     }
@@ -94,7 +94,7 @@
                         cursor: pointer;
                         border-radius:5px;
                         position: absolute;
-                        top:300px;
+                        top:325px;
                         left: 975px;
 
                     }

@@ -35,8 +35,9 @@ def SearchResultsView(request):
     
         project_list = list(set(project_list1) | set(project_list2))
     elif searchQuery == "searchDepartment":
+        #return HttpResponse('Sorry, this feature is currently unavailable, please search by User or Project.')
         pdepartment_list=Project.objects.filter(Q(department__icontains=query))
-        udepartment_list=Profile.objects.filter(Q(department_icontains=query))
+        udepartment_list=Profile.objects.filter(Q(Department__icontains=query))
         udepartment_list = list(set(udepartment_list))
         pdepartment_list = list(set(pdepartment_list))
     elif searchQuery == "searchFaculty":

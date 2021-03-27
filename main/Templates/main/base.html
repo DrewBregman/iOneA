@@ -59,6 +59,18 @@
 
 		}
 
+		.dropDown{
+			position: relative;
+			right: 250px;
+			top: 50px;
+
+		}
+		
+		.text{
+			position:absolute;
+			top:50px;
+			left:600px;
+		}
 	</style>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,6 +93,15 @@
 	
 	<div class="input-group rounded">
 		<form action="{% url 'search_results' %}" method="get" >
+			<div class="dropDown"
+                <label for="searchBy">Search By:</label>
+                <select id="z" name="z">
+                    <option value="searchUser">Faculty or Student</option>
+                    <option value="searchProject">Project</option>
+                    <option value="searchDepartment">Department</option>
+                    <option value="searchFaculty">Faculty</option>
+                </select>
+            </div>
 			<input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
 				aria-describedby="search-addon" name="q"/>
 			
@@ -89,7 +110,7 @@
 	<div id="content" name="content" class="main">	
 		<div class="row justify-content-center">
 			<div class="col-8">
-				<div style="clear: both">
+				<div class = "text" style="clear: both">
 					<h1 style="float: left" class="mt-2">Candle</h1>
 					<img src="https://img.icons8.com/color/48/fa314a/firebase.png"/>
 					<i><h6 style="float: right" style="color:black;font-size: 5px;">Ignite your passion.</h6></i>
