@@ -26,8 +26,11 @@
   <component name="ChangeListManager">
     <list default="true" id="31a42e0d-f398-404d-915a-0d1ae8991716" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/templates/projects/projectpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/templates/projects/projectpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,9 +261,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="430" y="53" key="git4idea.branch.GitSmartOperationDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615343359679" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1615490063137">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1616863246168">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615490063137" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1616863246168" />
   </component>
 </project>

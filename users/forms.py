@@ -20,9 +20,19 @@ class UserUpdateForm(forms.ModelForm):
         fields = ['username', 'email']
 
 class ProfileUpdateForm(forms.ModelForm):
+    firstName = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'First Name'}))
+    lastName = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Last Name'}))
+    #email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder':'Enter Email'}))
+    Major = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'What is your major?'}))
+    Minor = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Do you have a minor?'}))
+    interest = forms.CharField(widget=forms.TextInput(attrs={'placeholder':"Your academic or commmercial interests are..."}))
+    expertise = forms.CharField(widget=forms.Textarea(attrs={'placeholder':"You have expertise in..."}))
+    research_goals = forms.CharField(widget=forms.Textarea(attrs={'placeholder':"Your research goals are..."}))
+    interest = forms.CharField(widget=forms.Textarea(attrs={'placeholder':"Your academic or commmercial interests are..."}))
+    expertise = forms.CharField(widget=forms.Textarea(attrs={'placeholder':"You have expertise in..."}))
+    research_goals = forms.CharField(widget=forms.Textarea(attrs={'placeholder':"Your research goals are..."}))
     class Meta:
         model = Profile
-
         fields = ['firstName', 'lastName', 'Major', 'Minor', 'title', 'gradYear',
                 'company', 'phone', 'Department', 'interest', 'expertise', 'research_goals',
                 'lookingFor', 'image', 'twitter']

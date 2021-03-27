@@ -22,6 +22,7 @@ class newUProj(forms.ModelForm):
      #   list1.append(uProj.project)
     user = forms.ModelChoiceField(queryset=User.objects.all(), empty_label=None)
     #project = forms.ModelChoiceField(queryset=list1,empty_label=None)
+    title = forms.CharField(max_length=30, widget=forms.TextInput(attrs={'placeholder':'Define their role'}))
     class Meta:
         model = uProjects
         fields = ['user', 'project', 'title','ifAdmin']

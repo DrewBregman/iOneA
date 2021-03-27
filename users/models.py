@@ -38,11 +38,11 @@ class Profile(models.Model):
     )
 
     #title = models.CharField(max_length=30, null=False, blank=False)
-    Major = models.CharField(max_length=50, null=False, blank=False, default="Undeclared")
+    Major = models.CharField(max_length=50, null=True, blank=False)
     Minor = models.CharField(max_length=50, null=True, blank=True)
-    interest = models.TextField("What Are Your Interests?", default="Your academic or commmercial interests are...")
-    expertise = models.TextField("Please list Your Areas of Expertise (separate by commas)", default="You have expertise in...")
-    research_goals = models.TextField("What Do You Want To Get Out Of Research?", default="Your research goals are...")
+    interest = models.TextField("What Are Your Interests?", null = True)
+    expertise = models.TextField("Please list Your Areas of Expertise (separate by commas)", null = True)
+    research_goals = models.TextField("What Do You Want To Get Out Of Research?", null = True)
     look = (
         ('a research team to join.', ('an established Research Team')),
         ('a project to work on.', ('a fun project to work on')),

@@ -30,8 +30,8 @@ class Project(models.Model):
         choices=dep_choice1,
         default='Independent',
     )
-    purpose = models.CharField("Enter your project's purpose", max_length=50,default="")
-    description=models.TextField("Please give a brief description of your project, progress, team, and goals.", default="")
+    purpose = models.CharField("Enter your project's purpose", max_length=50,null=True)
+    description=models.TextField("Please give a brief description of your project, progress, team, and goals.", null=True)
     tag_choice = (
         ('Data Analysis' , ('Data Analysis')),
         ('3D Printing' , ('3D Printing')),
@@ -147,7 +147,7 @@ class uProjects(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="uProj")
     ifAccepted = models.BooleanField(null = True, blank=False, default=False)
     #ifLeader = models.BooleanField(null = False, blank=False)
-    ifAdmin = models.BooleanField(null = True, blank=False, default=False)
+    ifAdmin = models.BooleanField("Do you want this user to be a project Admin?",null = True, blank=False, default=False)
     title = models.CharField(max_length=100, null=False, blank=False)
     def __str__(self):
         return self.user.username + ',' + self.project.name
