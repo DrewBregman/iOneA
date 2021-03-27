@@ -4,6 +4,7 @@ from PIL import Image
 from Notifications.models import Notification
 from multiselectfield import MultiSelectField
 from django import forms
+from phonenumber_field.modelfields import PhoneNumberField
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -79,7 +80,7 @@ class Profile(models.Model):
 
     gradYear = models.IntegerField("Graduation Year", null=True, blank=True, default=2023)
     company = models.CharField(max_length=2, null=True, blank=True, default="")
-    phone = models.IntegerField("Phone Number", null=False, blank=False, default=True)
+    phone = PhoneNumberField(null=True, blank=False, default = '') #, unique=True)
     statusOptions = (
         ('Active', ('Active')),
         ('Archived', ('Archived')),

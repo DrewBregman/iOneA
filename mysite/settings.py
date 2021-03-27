@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'datetime',
     'projects',
     'users.apps.UsersConfig',
-    #'phonenumber_field',
+    'phonenumber_field',
     'django_cleanup',
     'Notifications',
     'AIAD',

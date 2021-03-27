@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Profile
+from phonenumber_field.modelfields import PhoneNumberField
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()
@@ -31,6 +32,7 @@ class ProfileUpdateForm(forms.ModelForm):
     interest = forms.CharField(widget=forms.Textarea(attrs={'placeholder':"Your academic or commmercial interests are..."}))
     expertise = forms.CharField(widget=forms.Textarea(attrs={'placeholder':"You have expertise in..."}))
     research_goals = forms.CharField(widget=forms.Textarea(attrs={'placeholder':"Your research goals are..."}))
+    phone = PhoneNumberField()
     class Meta:
         model = Profile
         fields = ['firstName', 'lastName', 'Major', 'Minor', 'title', 'gradYear',
