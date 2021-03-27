@@ -15,22 +15,44 @@ from functools import wraps
 
 
 def SearchResultsView(request):
-
     query=request.GET.get('q')
-    object_list=Project.objects.filter(
-    Q(name__icontains=query) | Q(projectTag__icontains=query))
-    object_list1=Project.objects.filter(Q(department__icontains=query) | Q(lookingFor__icontains=query))
-    profilelist1 = Profile.objects.filter(Q(firstName__icontains =query) | Q(interest__icontains=query))
-    profilelist2 = Profile.objects.filter(Q(lastName__icontains =query) | Q(company__icontains=query))
-    profilelist2 = Profile.objects.filter(Q(lastName__icontains =query) | Q(company__icontains=query) | Q(Department__icontains=query))
-    final_list = list(set(object_list) | set(object_list1))
-    profile_list = list(set(profilelist1) | set(profilelist2))
-    context = {
-        'object_list': final_list,
-        'profile_list': profile_list
+    searchQuery=request.GET.get('z')
+    project_list = []
+    profile_list= []
+    udepartment_list=[]
+    pdepartment_list=[]
 
+    if searchQuery == "searchUser":
+        profile_list1 = Profile.objects.filter(Q(firstName__icontains =query) | Q(interest__icontains=query))
+        profile_list2 = Profile.objects.filter(Q(lastName__icontains =query) | Q(company__icontains=query) | Q(Department__icontains=query))
+    
+        profile_list = list(set(profile_list1) | set(profile_list2))
+        
+    elif searchQuery == "searchProject":
+        project_list1=Project.objects.filter(
+                                            Q(name__icontains=query) | Q(projectTag__icontains=query))
+        project_list2=Project.objects.filter(Q(department__icontains=query) | Q(lookingFor__icontains=query))
+    
+        project_list = list(set(project_list1) | set(project_list2))
+    elif searchQuery == "searchDepartment":
+        pdepartment_list=Project.objects.filter(Q(department__icontains=query))
+        udepartment_list=Profile.objects.filter(Q(department_icontains=query))
+        udepartment_list = list(set(udepartment_list))
+        pdepartment_list = list(set(pdepartment_list))
+    elif searchQuery == "searchFaculty":
+        return HttpResponse('Sorry, this feature is currently unavailable, please search by User.')
+    else: 
+        return HttpResponse('Sorry, please make a search by selection and try again.')
+        
+   
+    context = {
+        'project_list': project_list,
+        'profile_list': profile_list,
+        'udepartment_list': udepartment_list,
+        'pdepartment_list': pdepartment_list,
     }
     return render(request, 'search_results.html', context)
+
 
 class SearchPageView(TemplateView):
     template_name = 'searchbar.html'

@@ -1,3 +1,4 @@
+
 {% extends "main/base.html" %}
 <html>
 {% block content %}
@@ -5,26 +6,58 @@
 <head>
     <style type="text/css">
         .searchbar{
+            position: absolute;
             width: 100%;
             text-align:center;
             padding-bottom: 300px;
             padding-top:100px;
+        }
+        .submit{
+            position: relative;
+            width: 15%;
+            top: 35px;
+            left: 740px;
+        }
+
+        .dropDown{
+            position: relative;
+            width: 20%;
+            top: 60px;
+            left: -175px;
         }
     </style>
 </head>
 <body>
     
 
-    <div class="searchbar">
-        <h1>Search</h1>
-		<form action="{% url 'search_results' %}" method="get" >
-			<input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-				aria-describedby="search-addon" name="q"/>
-		</form>
-	</div>
+    <div>
+    <h1>Search By</h1>
+        <form action="{% url 'search_results' %}" method="get">
+            <div class="dropDown"
+                <label for="searchBy">Search By:</label>
+                <select id="z" name="z">
+                    <option value="searchUser">Faculty or Student</option>
+                    <option value="searchProject">Project</option>
+                    <option value="searchDepartment">Department</option>
+                    <option value="searchFaculty">Faculty</option>
+                </select>
+            </div>
+            <input type="submit" class="submit" placeholder="submit" aria-label="submit"
+                    aria-describedby="search-addon" name="submit"/>
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                aria-describedby="search-addon" name="q"/>
+        </form>
+    </div>
+    
 </body>
-{%endblock%}
 
+
+
+
+</body>
+</html>
+
+{%endblock%}
 
 </html>
 
