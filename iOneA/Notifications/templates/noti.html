@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+<html>
+
+{%block content%}
+<h1> Notifications </h1>
+
+<ul>
+    {% for Notification in object_list %}
+    <li>
+        {{Notification.message}}
+        <a href={{Notification.url}}>View</a>
+    </li>
+    <ul>
+    {% if  Notification.ifViewed == False %}
+        NEW
+    {%endif%}
+    </ul>
+
+    {% endfor %}
+</ul>
+
+{%endblock%}
+</html>

@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+<html>
+
+{%block content%}
+<h1> Search Results </h1>
+
+<ul>
+    {% for project in object_list %}
+     <li>
+        {{project.name}}, {{project.department}}, {{project.projectTag}}
+     </li>
+    {% endfor %}
+</ul>
+<ul>
+    {% for profile in profile_list %}
+     <li>
+        {{profile.firstName}}, {{profile.lastName}}
+     </li>
+    {% endfor %}
+</ul>
+{%endblock%}
+</html>

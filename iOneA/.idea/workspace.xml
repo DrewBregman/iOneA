@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="31a42e0d-f398-404d-915a-0d1ae8991716" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Notifications/templates/allow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/templates/noti.html" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/templates/noti.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notifications/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Notifications/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/templates/projects/projectpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/templates/projects/projectpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projects/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="ProjectId" id="1pU7pkBog2U7FfmB1CUAbCoDY4G" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Notifications/templates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\Notifications\templates" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\main" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\main\migrations" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\Notifications\templates" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\users\Templates\users" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\Notifications" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\main\migrations" />
+      <recent name="C:\Users\Seth Benson\Desktop\iOneA\main" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31a42e0d-f398-404d-915a-0d1ae8991716" name="Default Changelist" comment="" />
+      <created>1615226000185</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615226000185</updated>
+    </task>
+    <task id="LOCAL-00001" summary="fixed some problems, found some more">
+      <created>1615239787445</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615239787445</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fixed some pmore">
+      <created>1615240292996</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615240292996</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixed some pmore">
+      <created>1615241281596</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615241281596</updated>
+    </task>
+    <task id="LOCAL-00004" summary="did some things">
+      <created>1615493338923</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615493338923</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixed your stupid bugs ANDREW">
+      <created>1615493738392</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615493738392</updated>
+    </task>
+    <task id="LOCAL-00006" summary="got the launch login screen to work beautifully">
+      <created>1615495006838</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615495006838</updated>
+    </task>
+    <task id="LOCAL-00007" summary="got the launch login screen to work beautifully">
+      <created>1615517057844</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1615517057844</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Notifications Part1">
+      <created>1615599410269</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1615599410269</updated>
+    </task>
+    <task id="LOCAL-00009" summary="90% done with invite funcitonality">
+      <created>1615840239009</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615840239009</updated>
+    </task>
+    <task id="LOCAL-00010" summary="improved aesthetics with notification pages">
+      <created>1615840812358</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1615840812358</updated>
+    </task>
+    <task id="LOCAL-00011" summary="notification doing great">
+      <created>1615845985756</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1615845985756</updated>
+    </task>
+    <task id="LOCAL-00012" summary="notification vibing">
+      <created>1615853407964</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615853407964</updated>
+    </task>
+    <task id="LOCAL-00013" summary="the ultimate champ of power automate">
+      <created>1616217294265</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616217294265</updated>
+    </task>
+    <task id="LOCAL-00014" summary="cleaned up notifications">
+      <created>1616361960513</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1616361960513</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fixed the profile stuff">
+      <created>1616363175830</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1616363175830</updated>
+    </task>
+    <task id="LOCAL-00016" summary="email link in top-right corner">
+      <created>1616363678577</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1616363678577</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Half done with request-to-join functionality">
+      <created>1616371077210</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1616371077210</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Haha">
+      <created>1616372189318</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1616372189318</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed some problems, found some more" />
+    <MESSAGE value="fixed some pmore" />
+    <MESSAGE value="did some things" />
+    <MESSAGE value="fixed your stupid bugs ANDREW" />
+    <MESSAGE value="got the launch login screen to work beautifully" />
+    <MESSAGE value="Notifications Part1" />
+    <MESSAGE value="90% done with invite funcitonality" />
+    <MESSAGE value="improved aesthetics with notification pages" />
+    <MESSAGE value="notification doing great" />
+    <MESSAGE value="notification vibing" />
+    <MESSAGE value="the ultimate champ of power automate" />
+    <MESSAGE value="cleaned up notifications" />
+    <MESSAGE value="fixed the profile stuff" />
+    <MESSAGE value="email link in top-right corner" />
+    <MESSAGE value="Half done with request-to-join functionality" />
+    <MESSAGE value="Haha" />
+    <option name="LAST_COMMIT_MESSAGE" value="Haha" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="270" y="0" key="CommitChangelistDialog2" timestamp="1616372188445">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="270" y="0" key="CommitChangelistDialog2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616372188445" />
+    <state x="253" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1616217293713" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1616372192988">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1616372192988" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1616217296601" />
+    <state x="430" y="53" key="git4idea.branch.GitSmartOperationDialog" timestamp="1615343359679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="430" y="53" key="git4idea.branch.GitSmartOperationDialog/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615343359679" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1615490063137">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/-1920.0.1920.1040@0.0.1280.680" timestamp="1615490063137" />
+  </component>
+</project>
